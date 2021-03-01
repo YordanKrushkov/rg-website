@@ -1,0 +1,104 @@
+
+.h2{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.wrapper{
+    width: 100%;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    align-items: center;
+}
+.h6{
+    margin:2px;
+}
+.addFile{
+    display: none;
+}
+.title{
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid #FC5321;
+    padding: 10px;
+    margin: 20px 0;
+    outline: none;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+.select{
+    border-radius: 10px;
+    border: 2px solid #FC5321;
+    padding: 10px;
+    outline: none;
+    text-transform: capitalize;
+    width: 32%;
+}
+.sizeWrapper{
+    width: 83%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.size{
+    border-radius: 10px;
+    border: 2px solid #FC5321;
+    padding: 10px;
+    outline: none;
+    width: 20%;
+}
+
+.textarea{
+    border: 2px solid #FC5321;
+    outline: none;
+    resize: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 78%;
+    min-height: 150px;
+}
+.button{
+    margin-top: 40px;
+    width: 85%;
+    padding: 10px;
+    background-color: #FC5321;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+.addPhotos{
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+    background-color: #FC5321;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+.button:hover, .addPhotos:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+}
+.option{
+    text-transform: capitalize;
+}
+
+.delete{
+    width: 75% !important;
+    margin-top: 20px !important;
+    
+}
