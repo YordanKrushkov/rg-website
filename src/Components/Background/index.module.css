@@ -1,0 +1,28 @@
+.wrapper{
+    width: 100vw;
+    position:relative;
+    z-index: -1;
+    bottom: -90%;
+}
+.img{
+    width: 100%;
+    position: fixed;
+    top: -80%;
+    left: 0;
+}
+@media screen and (max-width:989px){
+    .img{
+        top: -40%;
+    }
+}
+@media screen and (max-width:765px){
+    .img{
+        top: -20%;
+    }
+}
+@media screen and (max-width:650px){
+    .img{
+        top: 0%;
+        height: 100%;
+    }
+}

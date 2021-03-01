@@ -1,0 +1,89 @@
+.wrapper{
+    position:fixed;
+    top: 30%;
+    width: 100%;
+}
+.between{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 7px 0;
+    width: 60%;
+    margin: 0 auto;
+
+}
+.titleWrapper{
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 5px 20px;
+}
+
+.name{
+    font-family: 'Dancing Script', cursive;
+    font-size: 120px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+
+}
+.prof{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 1180px){
+.between{
+    width: 80%;
+}
+}
+@media screen and (max-width: 984px){
+    .name{
+        font-size: 80px;
+    
+    }
+}
+@media screen and (max-width: 655px){
+    .wrapper{
+        top:40%
+    }
+    .name{
+        font-size: 64px;
+    }
+    .prof{
+        font-size: 20px;
+
+    }
+}
+@media screen and (max-width: 550px){
+  
+    .between{
+        width: 90%;
+    }
+    .name{
+        font-size: 54px;
+    }
+    .prof{
+        font-size: 25px;
+        padding-top: 10px;
+
+    }
+
+}
+@media screen and (max-width: 420px){
+  
+    .between{
+        width: 90%;
+    }
+    .name{
+        font-size: 42px;
+    }
+    .prof{
+        font-size: 20px;
+        padding-top: 10px;
+
+    }
+
+}
