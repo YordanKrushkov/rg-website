@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import { AuthContext } from '../../Context';
 import authenticate from '../../Services/auth'
 
-const url = 'http://localhost:4500/login';
+const url = 'https://yordankrushkov.github.io/rgbackend/login';
 const Login = () => {
     const [user, setUser] = useState({
         email: '',
