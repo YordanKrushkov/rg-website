@@ -1,24 +1,19 @@
 import styles from "./index.module.css";
-import react, {useContext,useState,useEffect} from 'react';
-import {useHistory} from 'react-router-dom'
+import {useContext,useState,useEffect} from 'react';
 import { FaFacebook, FaPinterest, FaEdit, FaUserAlt } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import {hoverHandler, hoverOut,openImgInput} from '../../utils/eventHandlers'
 import { AuthContext } from "../../Context";
 import Loader from '../../Components/Loader'
 import getMyData from "../../Services/getUser";
-const url = "https://api.cloudinary.com/v1_1/rggallery/image/upload";
-
+import uploadImage from '../../Services/uploadImg'
+import emailjs from 'emailjs-com';
 const Contact = () => {
-  const history=useHistory()
   const context = useContext(AuthContext);
-  const { isAuthenticated } = context;
+  const { isAuthenticated} = context;
   const isAuth = isAuthenticated;
   const [me, setMe] = useState({});
   const [update, setUpdate] = useState({});
-  const [img, setImage] = useState({
-    img: "",
-  });
 
   const changeHandler=(e)=>{
       let data
@@ -32,35 +27,12 @@ const Contact = () => {
       surname=data[1];
     }
 
-    setMe({
+    setUpdate({
       [e.target.id!='nameTitle']:e.target.value,
-      neme:name,
+      name:name,
       surname:surname
     })
   }
-  const uploadImage = async (e) => {
-    let oldImg = me.img;
-    const files = e.target.files;
-    // let newImg = files[0].name;
-    // setImage({ img: newImg });
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "rgArtGallery");
-
-    const res = await fetch(`${url}`, {
-      method: "POST",
-      body: data,
-    });
-    const file = await res.json();
-    setImage(file.secure_url);
-     await fetch("http://localhost:4500/updateUser", {
-      method: "POST",
-      body: JSON.stringify({ id: me._id, cover: file.secure_url }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    },);
-  };
   useEffect(() => {
     getMyData()
       .then((data) => setMe({ ...data }))
@@ -90,7 +62,7 @@ const Contact = () => {
     e.preventDefault();
     document.getElementById('contactInfo').style.display='block';
     document.getElementById('updateInfo').style.display='none';
-    document.getElementById('contactWrapper').style.height="850px";
+    document.getElementById('contactWrapper').style.height="800px";
     
     const send = await fetch("http://localhost:4500/updateUser", {
       method: "POST",
@@ -103,6 +75,18 @@ const Contact = () => {
   useEffect(()=>{
 
   },[submitHandler])
+
+  const sendEmail=(e)=>{
+    e.preventDefault();
+
+    emailjs.sendForm('service_fe5eeh2', 'template_phwyfc2', e.target, 'user_guUortiRQj9e60clgIKdI')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  }
   return (
       <div className={styles.wrapper} id="contactWrapper">
         <div className={styles.container}>
@@ -111,7 +95,7 @@ const Contact = () => {
             <span className={styles.span} id="coverImg" >
               <FaEdit onClick={() => { openImgInput("cover")}} />
             </span>
-            <input className={styles.hidden} id="cover" type="file"  onChange={uploadImage}/>
+            <input className={styles.hidden} id="cover" type="file"  onChange={(e)=>{uploadImage(e,me,'cover')}}/>
           </div>
           <div className={styles.contactsWrapper} onMouseEnter={()=> isAuth ?hoverHandler('changeInfo'):null} onMouseLeave={()=>hoverOut('changeInfo')}>
           <div className={styles.contactInfo} id='contactInfo'>
@@ -120,22 +104,13 @@ const Contact = () => {
               <FaEdit />
             </span>
            {me.fb ? <div className={styles.socialMedia}>
-              <a
-                href={me.fb}
-                target="blank"
-              >
+              <a href={me.fb} target="blank">
                 <FaFacebook className={styles.icons} />
               </a>
-              <a
-                href={me.insta}
-                target="blank"
-              >
+              <a href={me.insta} target="blank">
                 <RiInstagramFill className={styles.icons} />
               </a>
-              <a
-                href={me.pin}
-                target="blank"
-              >
+              <a href={me.pin} target="blank">
                 <FaPinterest className={styles.icons} />
               </a>
             </div>:null}
@@ -143,12 +118,7 @@ const Contact = () => {
             <form className={styles.updateForm} id="updateInfo" onSubmit={submitHandler}>
             <div className={styles.nameWrapper}>
             <FaUserAlt className={styles.icons} />
-            <input
-              className={styles.inputEdit}
-              type="text"
-              id="nameTitle"
-               onChange={changeHandler}
-            />
+            <input className={styles.inputEdit} type="text" id="nameTitle" onChange={changeHandler}/>
             </div>
             <div className={styles.editSocial}>
             <div className={styles.divWrapper}>
@@ -170,26 +140,11 @@ const Contact = () => {
          
           {me.email ?<div className={styles.formWrapper}>
             <h1 className={styles.title}>Say hello</h1>
-            <form className={styles.form}>
-              <input className={styles.input} type="text" placeholder="Name" />
-              <input
-                className={styles.input}
-                type="email"
-                placeholder="Email"
-              />
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Subject"
-              />
-              <textarea
-                className={styles.textarea}
-                name="message"
-                id="message"
-                cols="30"
-                rows="10"
-                placeholder="Message"
-              ></textarea>
+            <form className={styles.form} onSubmit={sendEmail}>
+              <input className={styles.input} type="text" id="name" name="name" placeholder="Name" />
+              <input className={styles.input} type="email" id="email" name="email" placeholder="Email"/>
+              <input className={styles.input}type="text" id="subject" placeholder="Subject"name="subject"/>
+              <textarea className={styles.textarea} name="message" id="message" cols="30" rows="10"placeholder="Message" />
               <button className={styles.button}>Send</button>
             </form>
           </div>:null}

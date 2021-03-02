@@ -5,7 +5,7 @@ import getOne from '../../Services/getOne';
 import { AuthContext } from "../../Context";
 import Edit from '../../Components/editDetails'
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { FaFacebook, FaPinterest, FaEdit, FaUserAlt } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import DeleteConfirm from '../../Components/Delete'
 
 const Details = () => {
@@ -192,7 +192,7 @@ description.value=info.description
             </div>
           </div>
           <div className={ styles.description }>
-            <h2>Description</h2>
+            <h2 className={styles.h2}>Description</h2>
             <p className={ styles.p }>
               { info.description }
             </p>

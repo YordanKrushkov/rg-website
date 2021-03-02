@@ -9,6 +9,9 @@ const Title = () => {
                 <h6 className={styles.prof}>Artist</h6>
             </div>
             </div>
+            <button className={styles.gallery}>Live gallery
+            <div className={styles.ripple}><div className={styles.div}></div><div className={styles.div}></div></div>
+            </button>
         </div>
      );
 }
