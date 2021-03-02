@@ -12,7 +12,7 @@ import Details from './Pages/Details'
 import Gallery from './Components/Gallery'
 import Loader from './Components/Loader'
 import { AuthContext } from './Context';
-
+import Live from './Pages/Live'
 function App() {
   const context=useContext(AuthContext);
   const {isAuthenticated}=context
@@ -31,6 +31,7 @@ function App() {
       <Route  path="/landscapes" component={Gallery} />
       <Route  path="/contacts" component={Contact} />
       <Route  path="/login" component={Login} />
+      <Route  path="/live" component={Live} />
       {isAuth ? <Route  path="/add" component={Add} />:null}
       <Route  path="/details:id" component={Details} />
       <Switch/>

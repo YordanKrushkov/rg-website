@@ -44,6 +44,7 @@
     text-transform: capitalize;
     font-style: italic;
     margin-top: 100px;
+    text-decoration: none;
 }
 .gallery:hover{
     cursor: pointer;
