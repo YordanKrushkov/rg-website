@@ -1,5 +1,5 @@
 import getCookie from '../utils/getCookie'
-const url = 'http://localhost:4500/verify';
+const url = 'https://yordankrushkov.github.io/rgbackend/verify';
 const userVerify= async(token)=>{
     let promise = await fetch(url, {
         method: 'POST',

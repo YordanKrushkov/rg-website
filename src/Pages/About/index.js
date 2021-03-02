@@ -40,7 +40,7 @@ const About = () => {
     document.getElementById("paragraph").style.display = "block";
     document.getElementById("about").style.display = "none";
     document.getElementById("aboutForm").style.display = "none";
-    const send = await fetch("http://localhost:4500/updateUser", {
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com/updateUser", {
       method: "POST",
       body: JSON.stringify({ id: me._id, bio: description.description }),
       headers: {

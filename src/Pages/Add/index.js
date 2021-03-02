@@ -53,7 +53,7 @@ const Add = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const send = await fetch("http://localhost:4500/create", {
+    const send = await fetch("https://yordankrushkov.github.io/rgbackend/create", {
       method: "POST",
       body: JSON.stringify({ ...painting }),
       headers: {

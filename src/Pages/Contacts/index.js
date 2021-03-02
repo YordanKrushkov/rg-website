@@ -64,7 +64,7 @@ const Contact = () => {
     document.getElementById('updateInfo').style.display='none';
     document.getElementById('contactWrapper').style.height="800px";
     
-    const send = await fetch("http://localhost:4500/updateUser", {
+    const send = await fetch("https://yordankrushkov.github.io/rgbackend/updateUser", {
       method: "POST",
       body: JSON.stringify({ id: me._id, ...update }),
       headers: {
