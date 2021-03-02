@@ -1,56 +1,22 @@
-import react, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import styles from "./index.module.css";
-import { FaFacebook, FaPinterest, FaEdit, FaUserAlt } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
 import getMyData from "../../Services/getUser";
 import { hoverHandler, hoverOut, openImgInput } from "../../utils/eventHandlers";
 import { AuthContext } from "../../Context";
+import uploadImage from '../../Services/uploadImg'
 import Loader from '../../Components/Loader'
-const url = "https://api.cloudinary.com/v1_1/rggallery/image/upload";
 const About = () => {
+
   const [me, setMe] = useState({});
-
-  useEffect(() => {
-    getMyData()
-      .then((data) => setMe({ ...data }))
-      .catch((e) => {
-        console.log("cv error:", e);
-      });
-  }, []);
-
   const context = useContext(AuthContext);
   const { isAuthenticated } = context;
   const isAuth = isAuthenticated;
-  const [img, setImage] = useState({
-    img: "",
-  });
+
   const [description, setDescription] = useState({
     description: "",
   });
 
-  const uploadImage = async (e) => {
-    let oldImg = me.img;
-    const files = e.target.files;
-    let newImg = files[0].name;
-    setImage({ img: newImg });
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "rgArtGallery");
-
-    const res = await fetch(`${url}`, {
-      method: "POST",
-      body: data,
-    });
-    const file = await res.json();
-    setImage(file.secure_url);
-    const send = await fetch("http://localhost:4500/updateUser", {
-      method: "POST",
-      body: JSON.stringify({ id: me._id, img: file.secure_url }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  };
   const clickHandler = (id, secondId) => {
     let elOne = document.getElementById(id);
     let elTwo = document.getElementById(secondId);
@@ -82,39 +48,35 @@ const About = () => {
       },
     });
   };
+  useEffect(() => {
+    getMyData()
+      .then((data) => setMe({ ...data }))
+      .catch((e) => {
+        console.log("cv error:", e);
+      });
+  }, [uploadImage, submitHandler]);
   return (
     <div className={ styles.wrapper }>
       <div className={ styles.body }>
-        <div
-          className={ styles.info }
-          onMouseEnter={ () => (isAuth ? hoverHandler("editText") : null) }
-          onMouseLeave={ () => hoverOut("editText") }
-        >
-          <div
-            className={ styles.imgWrapper }
-            onMouseEnter={ () =>
-              isAuth ? hoverHandler("editProfileImg") : null
-            }
-            onMouseLeave={ () => hoverOut("editProfileImg") }
-          >
-            <FaEdit className={ styles.iconOne } id="editProfileImg" onClick={ () => { openImgInput("profileImgInput")} }/>
-            <input className={ styles.addFile } id="profileImgInput" type="file" multiple="multiple" onChange={ uploadImage } />
-            {me.img ?<img className={ styles.img } src={me.img} alt="Ralitsa" />: <Loader/>}
-          </div>
-          <div className={ styles.text }>
-            <FaEdit className={ styles.icon } id="editText" onClick={ () => clickHandler("aboutForm", "paragraph") } />
-            {me.bio?<p className={ styles.p } id="paragraph">
-              { me.bio }
-            </p>
-            :<Loader/>}
-            <form className={ styles.form } id="aboutForm" onSubmit={ submitHandler } >
-              <textarea className={ styles.textArea } name="about" id="about" onChange={ onChangeHandler } />
-              <button className={ styles.button } type="submit" id="textButton">
-                Submit
+        { me.img
+          ? <div className={ styles.info } onMouseEnter={ () => (isAuth ? hoverHandler("editText") : null) } onMouseLeave={ () => hoverOut("editText") }>
+            <div
+              className={ styles.imgWrapper } onMouseEnter={ () => isAuth ? hoverHandler("editProfileImg") : null } onMouseLeave={ () => hoverOut("editProfileImg") }>
+              <FaEdit className={ styles.iconOne } id="editProfileImg" onClick={ () => { openImgInput("profileImgInput") } } />
+              <input className={ styles.addFile } id="profileImgInput" type="file" multiple="multiple" onChange={(e)=>{uploadImage(e,me,'img')}} />
+              { me.img ? <img className={ styles.img } src={ me.img } alt="Ralitsa" /> : <Loader /> }
+            </div>
+            <div className={ styles.text }>
+              <FaEdit className={ styles.icon } id="editText" onClick={ () => clickHandler("aboutForm", "paragraph") } />
+              { me.bio ? <p className={ styles.p } id="paragraph">{ me.bio }</p> : <Loader /> }
+              <form className={ styles.form } id="aboutForm" onSubmit={ submitHandler } >
+                <textarea className={ styles.textArea } name="about" id="about" onChange={ onChangeHandler } />
+                <button className={ styles.button } type="submit" id="textButton">
+                  Submit
               </button>
-            </form>
-          </div>
-        </div>
+              </form>
+            </div>
+          </div> : <Loader /> }
       </div>
     </div>
   );

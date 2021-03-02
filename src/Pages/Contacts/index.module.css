@@ -22,6 +22,8 @@
 }
 .author {
     display: flex;
+    font-family: 'Dancing Script', cursive;
+    font-size: 62px;
 }
 .socialMedia {
     width: 60%;
@@ -37,6 +39,8 @@
     text-align: left;
     margin: 10px;
     padding-left: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
 }
 .header {
     width: 100%;
@@ -82,7 +86,8 @@
     outline: none;
     height: 35px;
     margin: 10px;
-    border: 1px solid #fc5321;
+    border: 2px solid #fc5321;
+    padding-left: 10px;
 }
 .textarea {
     outline: none;
@@ -90,7 +95,7 @@
     margin: 10px;
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid #fc5321;
+    border: 2px solid #fc5321;
     height: 120px;
 }
 
@@ -169,6 +174,9 @@
         width: 80%;
         left: 10%;
     }
+    .author{
+        font-size: 52px;
+    }
 }
 
 @media screen and (max-width: 776px) {
@@ -184,7 +192,9 @@
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
     }
-
+    .author{
+        font-size: 46px;
+    }
     .contactsWrapper {
         width: 90%;
     }
@@ -195,8 +205,28 @@
         left: 5%;
         top: 8%;
     }
-
+    .name{
+        right: 0;
+    }
     .contactsWrapper {
         width: 90%;
+    }
+    .button{
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+@media screen and (max-width: 462px) {
+    .wrapper {
+        width: 90%;
+        top: 8%;
+    }
+   
+    .author{
+        font-size: 24px;
+    }
+    
+    .header{
+        min-width: 100px;
     }
 }

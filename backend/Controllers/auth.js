@@ -90,9 +90,7 @@ const getuser=async(req,res)=>{
 } 
 const updateUser=async(req,res)=>{
         const {id}=req.body;
-        const key=Object.keys(req.body)[1];
-        const value=Object.values(req.body)[1];
-        const user= await User.findOneAndUpdate({_id:id},{$set:{[key]:value}})
+        const user= await User.findOneAndUpdate({_id:id},{$set:{...req.body}})
         }
 module.exports = {
         register,

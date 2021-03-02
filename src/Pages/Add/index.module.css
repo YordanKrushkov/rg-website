@@ -7,7 +7,10 @@
     width:450px;
     height: auto;
 }
-
+.title{
+    font-family: 'Dancing Script', cursive; 
+    font-size: 42px;
+}
 .form{
     display: flex;
     flex-direction: column;
@@ -38,11 +41,12 @@ display: none;
 .input{
     border-radius: 5px;
     outline: none;
-    border:1px solid black;
+    border:2px solid #FC5321;
     margin: 10px 0;
     width: 75%;
     height: 40px;
     padding:0 10px;
+    
 }
 .selectWrapper{
     display: flex;
@@ -52,7 +56,7 @@ display: none;
 .select{
     border-radius: 5px;
     outline: none;
-    border:1px solid black;
+    border:2px solid #FC5321;
     height: 40px;
     padding: 10px;
     width: 30%;
@@ -68,7 +72,7 @@ display: none;
 .size{
     border-radius: 5px;
     outline: none;
-    border:1px solid black;
+    border:2px solid #FC5321;
     height: 40px;
     width: 24%;
     padding: 0 10px;
@@ -95,7 +99,7 @@ display: none;
     resize: none;
     outline: none;
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid #FC5321;
     margin: 10px 0;
 }
 
