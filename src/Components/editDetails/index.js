@@ -74,7 +74,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const send = await fetch("https://rg-gallerybackend.herokuapp.com//updateone", {
+    const send = await fetch("https://git.heroku.com/rg-gallerybackend.git/updateone", {
       method: "POST",
       body: JSON.stringify({ id: info._id, ...painting, imgs: [...info.imgs, ...imagUrl] }),
       headers: {
@@ -87,7 +87,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
 
     information.style.display = "block"
     editButton.style.display = 'block'
-    history.push(`/rg-website/details:${info._id}`)
+    history.push(`/details:${info._id}`)
     Array.from(document.getElementsByClassName(styles.h6)).map(x => x.remove())
   }
   useEffect(() => { }, [img, painting, submitHandler, uploadImage]);
@@ -98,7 +98,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
     confirm.style.display = 'block'
     confirm.addEventListener('click', async (e) => {
       if (e.target.tagName === "BUTTON" && e.target.innerHTML === 'Yes') {
-        const send = await fetch("https://rg-gallerybackend.herokuapp.com//delete", {
+        const send = await fetch("https://git.heroku.com/rg-gallerybackend.git/delete", {
           method: "DELETE",
           body: JSON.stringify({ id: info._id }),
           headers: {
@@ -106,7 +106,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
           },
         });
         confirm.style.display = 'none';
-        history.push('/rg-website/')
+        history.push('/')
 
       } else if (e.target.tagName === "BUTTON" && e.target.innerHTML === 'No') {
         confirm.style.display = 'none';
