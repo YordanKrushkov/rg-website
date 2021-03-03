@@ -28,7 +28,7 @@ const Header = () => {
     }
   }
   const show = (nav, wrapper) => {
-    wrapper.style.height = "265px";
+    wrapper.style.height = "295px";
     nav.style.display = "block";
   }
   const hide = (nav, wrapper) => {
