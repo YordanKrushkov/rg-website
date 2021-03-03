@@ -16,7 +16,6 @@ const Details = () => {
   const isAuth = isAuthenticated
   const [info, setInfo] = useState({});
   const [edit, setEdit] = useState(false);
-  const [screen, setScreen] = useState(false);
   const [state, setState] = useState({
     backgroundImage: 'none',
     backgroundPosition: '0% 0%',
@@ -29,10 +28,6 @@ const Details = () => {
       .catch((e) => {
         console.log("cv error:", e);
       });
-      if(window.innerWidth>650){
-        setScreen(true);
-        console.log(screen);
-      }
   }, [edit]);
   const clickHandler = (e) => {
     let parent = document.getElementById('mainProfile').firstChild;
@@ -119,7 +114,6 @@ description.value=info.description
       backgroundImage: `url(${url})`,
       backgroundPosition: `${x}% ${y}%`
     })
-    console.log(screen);
   }
 
   const deleteHandler=(e)=>{
@@ -165,7 +159,7 @@ description.value=info.description
           <DeleteConfirm />
       <div className={ styles.headerWrapper }>
         <div className={ styles.mainPhotoWrapper } id="mainProfile">
-          <div style={ state } className={ styles.profilePictureWrapper } onDrop={ isAuth ? drop : null } onDragOver={ isAuth ? allowDrop : null } onMouseMove={ window.innerWidth>650 ?handleMouseMove :null } onMouseLeave={handleMouseOut }>
+          <div style={ state } className={ styles.profilePictureWrapper } onDrop={ isAuth ? drop : null } onDragOver={ isAuth ? allowDrop : null } onMouseMove={ window.innerWidth>650 ?handleMouseMove :null } onMouseLeave={window.innerWidth>650 ?handleMouseOut:null }>
             <img className={ styles.mainPhoto } src={ info.profile ? info.profile : '' } alt={ info.title } />
           </div>
           <div className={ styles.smallImagesWrapper } onClick={ clickHandler }>

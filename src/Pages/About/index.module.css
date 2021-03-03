@@ -143,6 +143,7 @@
     }
     .imgWrapper{
         width: 80%;
+        margin: 0 auto;
     }
     .text{
        max-width: 80%;
