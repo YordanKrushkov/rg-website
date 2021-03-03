@@ -14,6 +14,7 @@ const Header = () => {
   let nav = document.getElementById("mobileNav");
   let wrapper = document.getElementById("wrapper");
   const clickHandler = (e) => {
+    
     if (nav.style.display === "none" || nav.style.display === "") {
       show(nav, wrapper)
     } else {
@@ -22,7 +23,7 @@ const Header = () => {
 
   };
   const navClick = (e) => {
-    if (e.target.tagName === 'A') {
+    if (e.target.tagName === 'A' ||e.target.tagName === 'svg' ||e.target.tagName === 'path') {
       hide(nav, wrapper)
     }
   }
