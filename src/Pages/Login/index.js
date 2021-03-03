@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import { AuthContext } from '../../Context';
 import authenticate from '../../Services/auth'
 
-const url = 'https://rg-gallerybackend.herokuapp.com//login';
+const url = 'https://rg-gallerybackend.herokuapp.com/login';
 const Login = () => {
     const [user, setUser] = useState({
         email: '',
@@ -26,7 +26,7 @@ const Login = () => {
         authenticate(url, {email,password}, (user) => {
             context.login(user.email);
             localStorage.setItem('user', user.email)
-            history.push('/')
+            history.push('/rg-website/')
         }, (err) => {
             console.log('error submit',err);
             

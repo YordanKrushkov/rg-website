@@ -37,7 +37,7 @@ const Header = () => {
       <nav className={ styles.nav }>
         <ul className={ styles.ul }>
           <li className={ styles.li }>
-            <Link to="/" className={ styles.link }>
+            <Link to="/rg-website/" className={ styles.link }>
               Home
             </Link>
           </li>
@@ -47,27 +47,27 @@ const Header = () => {
             </Link>
           </li>
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/portraits" className={ styles.link }>
+            <Link to="/rg-website/portraits" className={ styles.link }>
               Portraits
             </Link>
           </li>
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/abstracts" className={ styles.link }>
+            <Link to="/rg-website/abstracts" className={ styles.link }>
               Abstracts
             </Link>
           </li>
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/landscapes" className={ styles.link }>
+            <Link to="/rg-website/landscapes" className={ styles.link }>
               Landscapes
             </Link>
           </li>
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/contacts" className={ styles.link }>
+            <Link to="/rg-website/contacts" className={ styles.link }>
               Contacts
             </Link>
           </li>
           { isAuth ? <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/add" className={ styles.link }>
+            <Link to="/rg-website/add" className={ styles.link }>
               Add
             </Link>
           </li>
@@ -79,37 +79,37 @@ const Header = () => {
       <nav className={ styles.mobile } id="mobileNav" onClick={ navClick }>
         <ul className={ styles.mobileUl }>
           <li className={ styles.mobileLi }>
-            <Link to="/" className={ styles.mobileLink }>
+            <Link to="/rg-website/" className={ styles.mobileLink }>
               Home
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/about" className={ styles.mobileLink }>
+            <Link to="/rg-website/about" className={ styles.mobileLink }>
               About
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/portraits" className={ styles.mobileLink }>
+            <Link to="/rg-website/portraits" className={ styles.mobileLink }>
               Portraits
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/abstracts" className={ styles.mobileLink }>
+            <Link to="/rg-website/abstracts" className={ styles.mobileLink }>
               Abstracts
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/landscapes" className={ styles.mobileLink }>
+            <Link to="/rg-website/landscapes" className={ styles.mobileLink }>
               Landscapes
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/contacts" className={ styles.mobileLink }>
+            <Link to="/rg-website/contacts" className={ styles.mobileLink }>
               Contacts
             </Link>
           </li>
           { isAuth ? <li className={ `${styles.mobileLi}` }>
-            <Link to="/add" className={ styles.mobileLink }>
+            <Link to="/rg-website/add" className={ styles.mobileLink }>
               Add
             </Link>
           </li> : null }

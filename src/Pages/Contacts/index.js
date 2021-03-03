@@ -64,7 +64,7 @@ const Contact = () => {
     document.getElementById('updateInfo').style.display='none';
     document.getElementById('contactWrapper').style.height="800px";
     
-    const send = await fetch("https://rg-gallerybackend.herokuapp.com//updateUser", {
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com/updateUser", {
       method: "POST",
       body: JSON.stringify({ id: me._id, ...update }),
       headers: {

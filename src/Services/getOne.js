@@ -1,4 +1,4 @@
-const url='https://rg-gallerybackend.herokuapp.com//getone'
+const url='https://rg-gallerybackend.herokuapp.com/getone'
 const getOne=async(id)=>{
    const promise= await fetch(url,{
         method:'GET',

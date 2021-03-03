@@ -87,7 +87,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
 
     information.style.display = "block"
     editButton.style.display = 'block'
-    history.push(`/details:${info._id}`)
+    history.push(`/rg-website/details:${info._id}`)
     Array.from(document.getElementsByClassName(styles.h6)).map(x => x.remove())
   }
   useEffect(() => { }, [img, painting, submitHandler, uploadImage]);
@@ -106,7 +106,7 @@ const Edit = (info, edit, setEdit, imgUrl) => {
           },
         });
         confirm.style.display = 'none';
-        history.push('/')
+        history.push('/rg-website/')
 
       } else if (e.target.tagName === "BUTTON" && e.target.innerHTML === 'No') {
         confirm.style.display = 'none';
