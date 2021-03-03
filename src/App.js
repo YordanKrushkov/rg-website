@@ -24,16 +24,16 @@ function App() {
       {/* <Loader /> */}
       <Background/>
       <Switch/>
-      <Route exact path="/" component={Title} />
-      <Route  path="/about" component={About} />
+      <Route exact path="rg-website/" component={Title} />
+      <Route  path="rg-website/about" component={About} />
       <Route  path="/portraits" component={Gallery} />
-      <Route  path="/abstracts" component={Gallery} />
-      <Route  path="/landscapes" component={Gallery} />
-      <Route  path="/contacts" component={Contact} />
-      <Route  path="/login" component={Login} />
-      <Route  path="/live" component={Live} />
+      <Route  path="rg-website/abstracts" component={Gallery} />
+      <Route  path="rg-website/landscapes" component={Gallery} />
+      <Route  path="rg-website/contacts" component={Contact} />
+      <Route  path="rg-website/login" component={Login} />
+      <Route  path="rg-website/live" component={Live} />
       {isAuth ? <Route  path="/add" component={Add} />:null}
-      <Route  path="/details:id" component={Details} />
+      <Route  path="rg-website/details:id" component={Details} />
       <Switch/>
     </div>
     </Router>

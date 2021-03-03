@@ -54,7 +54,7 @@ const Details = () => {
 
     var data = e.dataTransfer.getData("text");
     e.target.src = data;
-    const send = await fetch("https://yordankrushkov.github.io/rgbackend/updateone", {
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com//updateone", {
       method: "POST",
       body: JSON.stringify({ id: id, profile: data }),
       headers: {
@@ -132,7 +132,7 @@ description.value=info.description
             setInfo({
               ...info,
             })
-            const send = await fetch("https://yordankrushkov.github.io/rgbackend/updateone", {
+            const send = await fetch("https://rg-gallerybackend.herokuapp.com//updateone", {
               method: "POST",
               body: JSON.stringify({ id: info._id, ...info,}),
               headers: {

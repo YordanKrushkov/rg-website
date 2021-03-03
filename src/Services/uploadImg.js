@@ -13,7 +13,7 @@ const uploadImage = async (e, me, where) => {
     });
     const file = await res.json();
 
-     await fetch("https://yordankrushkov.github.io/rgbackend/updateUser", {
+     await fetch("https://rg-gallerybackend.herokuapp.com//updateUser", {
       method: "POST",
       body: JSON.stringify({ id: me._id, [where]: file.secure_url }),
       headers: {

@@ -1,4 +1,4 @@
-const url='https://yordankrushkov.github.io/rgbackend/get'
+const url='https://rg-gallerybackend.herokuapp.com//get'
 const getPaintings=async(gallery)=>{
    const promise= await fetch(url,{
         method:'GET',

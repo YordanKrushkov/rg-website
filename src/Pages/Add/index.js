@@ -53,7 +53,7 @@ const Add = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const send = await fetch("https://yordankrushkov.github.io/rgbackend/create", {
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com/create", {
       method: "POST",
       body: JSON.stringify({ ...painting }),
       headers: {
