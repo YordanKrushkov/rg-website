@@ -2,9 +2,11 @@
     margin: 200px auto;
     overflow: hidden;
     width: 100%;
+    width: 90%;
+    position: relative;
 }
 .instruction{
-    color: #FC5321;
+    color: #ffff;
     font-weight: 400;
     margin: 0;
 }
