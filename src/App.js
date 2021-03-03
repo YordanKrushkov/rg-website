@@ -33,6 +33,7 @@ function App() {
       {isAuth ? <Route  path="/rg-website/add" component={Add} />:null}
       <Route  path="/rg-website/details:id" component={Details} />
       <HashRouter/>
+
     </div>
     </Router>
   );
