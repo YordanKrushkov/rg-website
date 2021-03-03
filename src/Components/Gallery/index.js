@@ -23,7 +23,7 @@ const Gallery = () => {
 
   const clickHandler = (e) => {
     if (e.target.tagName === 'IMG') {
-      history.push(`/details:${e.target.id}`)
+      history.push(`rg-website/details:${e.target.id}`)
     }
   }
 
