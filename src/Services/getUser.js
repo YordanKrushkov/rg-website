@@ -1,5 +1,5 @@
 import getCookie from '../utils/getCookie'
-const url='http://localhost:4500/user'
+const url='https://rg-gallerybackend.herokuapp.com/user'
 const getMyData=async()=>{
    const promise= await fetch(url,{
         method:'GET',

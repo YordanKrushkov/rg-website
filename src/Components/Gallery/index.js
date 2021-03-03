@@ -9,7 +9,8 @@ const Gallery = () => {
   const [paint, setPaind] = useState({});
   const [loading, setLoading] = useState(true);
   const history = useHistory();
-  let filter = history.location.pathname.split('/')[1].slice(0, -1);
+  let filter = history.location.pathname.split('/')[2].slice(0, -1);
+  console.log(filter);
   useEffect(() => {
     getPaintings(filter)
       .then((data) => {
@@ -23,7 +24,7 @@ const Gallery = () => {
 
   const clickHandler = (e) => {
     if (e.target.tagName === 'IMG') {
-      history.push(`/details:${e.target.id}`)
+      history.push(`/rg-website/details:${e.target.id}`)
     }
   }
 

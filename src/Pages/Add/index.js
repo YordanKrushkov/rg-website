@@ -53,14 +53,14 @@ const Add = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const send = await fetch("http://localhost:4500/create", {
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com/create", {
       method: "POST",
       body: JSON.stringify({ ...painting }),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    history.push('/')
+    history.push('/rg-website/')
   }
   useEffect(() => { }, [img]);
 
