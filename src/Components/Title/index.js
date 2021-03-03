@@ -9,7 +9,7 @@ const Title = () => {
                 <h6 className={styles.prof}>Artist</h6>
             </div>
             </div> 
-            <Link to={'/live'}>
+            <Link to={'/rg-website/live'}>
             <button className={styles.gallery}>Live gallery
             <div className={styles.ripple}><div className={styles.div}></div><div className={styles.div}></div></div>
             </button>
