@@ -18,7 +18,7 @@
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
   },
-  "homepage": "http://YordanKrushkov.github.io/rg-website",
+  "homepage": "http://YordanKrushkov.github.io/rg-website/",
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\"",
     "build": "react-scripts build",
