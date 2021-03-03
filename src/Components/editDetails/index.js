@@ -74,7 +74,8 @@ const Edit = (info, edit, setEdit, imgUrl) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const send = await fetch("https://git.heroku.com/rg-gallerybackend.git/updateone", {
+
+    const send = await fetch("https://rg-gallerybackend.herokuapp.com/updateone", {
       method: "POST",
       body: JSON.stringify({ id: info._id, ...painting, imgs: [...info.imgs, ...imagUrl] }),
       headers: {
@@ -98,7 +99,9 @@ const Edit = (info, edit, setEdit, imgUrl) => {
     confirm.style.display = 'block'
     confirm.addEventListener('click', async (e) => {
       if (e.target.tagName === "BUTTON" && e.target.innerHTML === 'Yes') {
-        const send = await fetch("https://git.heroku.com/rg-gallerybackend.git/delete", {
+
+        const send = await fetch("https://rg-gallerybackend.herokuapp.com/delete", {
+
           method: "DELETE",
           body: JSON.stringify({ id: info._id }),
           headers: {

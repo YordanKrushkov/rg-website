@@ -42,7 +42,7 @@ const Header = () => {
             </Link>
           </li>
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/about" className={ styles.link }>
+            <Link to="/rg-website/about" className={ styles.link }>
               About
             </Link>
           </li>
