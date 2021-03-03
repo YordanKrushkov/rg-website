@@ -10,7 +10,6 @@ const Gallery = () => {
   const [loading, setLoading] = useState(true);
   const history = useHistory();
   let filter = history.location.pathname.split('/')[2].slice(0, -1);
-  console.log(filter);
   useEffect(() => {
     getPaintings(filter)
       .then((data) => {
@@ -21,7 +20,6 @@ const Gallery = () => {
         console.log("cv error:", e);
       });
   }, [])
-
   const clickHandler = (e) => {
     if (e.target.tagName === 'IMG') {
       history.push(`/rg-website/details:${e.target.id}`)

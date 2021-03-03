@@ -9,6 +9,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
   /* background-image: url('./assets/cover.jpg'); */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
