@@ -157,7 +157,7 @@
             max-height: 430px;
         }
         .mainPhoto:hover{
-            opacity: 100% !important;
+            opacity: 1 !important;
         }
         .smallImagesWrapper{
             width: 80%;
