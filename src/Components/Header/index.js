@@ -83,7 +83,9 @@ const Header = () => {
 
         </ul>
       </nav>
-      <GiHamburgerMenu className={ styles.mobileMenu } onClick={ clickHandler } />
+      <div  onClick={ clickHandler }>
+      <GiHamburgerMenu className={ styles.mobileMenu }/>
+      </div>
       <nav className={ styles.mobile } id="mobileNav" onClick={ navClick }>
         <ul className={ styles.mobileUl }>
           <li className={ styles.mobileLi }>
