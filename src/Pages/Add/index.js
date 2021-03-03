@@ -60,7 +60,7 @@ const Add = () => {
         "Content-Type": "application/json",
       },
     });
-    history.push('/')
+    history.push('rg-website/')
   }
   useEffect(() => { }, [img]);
 

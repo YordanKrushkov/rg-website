@@ -26,7 +26,7 @@ const Login = () => {
         authenticate(url, {email,password}, (user) => {
             context.login(user.email);
             localStorage.setItem('user', user.email)
-            history.push('/')
+            history.push('rg-website/')
         }, (err) => {
             console.log('error submit',err);
             
