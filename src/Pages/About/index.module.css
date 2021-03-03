@@ -139,10 +139,10 @@
 @media screen and (max-width: 600px){
     .info{
         flex-direction: column !important;
+        width: 90% !important;
     }
     .imgWrapper{
         width: 80%;
-        height: 50vw;
     }
     .text{
        max-width: 80%;
@@ -157,9 +157,6 @@
 @media screen and (max-width: 400px){
     .body{
         top: 8%;
-    }
-    .info{
-        width: 90% !important;
     }
     .imgWrapper{
         width: 85%;

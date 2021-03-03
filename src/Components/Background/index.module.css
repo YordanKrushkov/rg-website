@@ -10,16 +10,20 @@
     top: -80%;
     left: 0;
 }
+
+@media screen and (max-width:1029px){
+    .img{
+        top: 0%;
+        height: 100vh;
+    }
+}
 @media screen and (max-width:989px){
     .img{
-        top: -40%;
+        top: 0%;
+        height: 100vh;
     }
 }
-@media screen and (max-width:765px){
-    .img{
-        top: -20%;
-    }
-}
+
 @media screen and (max-width:650px){
     .img{
         top: 0%;

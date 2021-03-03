@@ -87,6 +87,11 @@
     }
   }
 
+@media screen and (max-width: 1300px){
+.between{
+    width: 80%;
+}
+}
 @media screen and (max-width: 1180px){
 .between{
     width: 80%;
