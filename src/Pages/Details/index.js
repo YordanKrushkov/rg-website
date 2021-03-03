@@ -16,6 +16,7 @@ const Details = () => {
   const isAuth = isAuthenticated
   const [info, setInfo] = useState({});
   const [edit, setEdit] = useState(false);
+  const [screen, setScreen] = useState(false);
   const [state, setState] = useState({
     backgroundImage: 'none',
     backgroundPosition: '0% 0%',
@@ -28,6 +29,10 @@ const Details = () => {
       .catch((e) => {
         console.log("cv error:", e);
       });
+      if(window.innerWidth>650){
+        setScreen(true);
+        console.log(screen);
+      }
   }, [edit]);
   const clickHandler = (e) => {
     let parent = document.getElementById('mainProfile').firstChild;
@@ -104,14 +109,17 @@ description.value=info.description
   }
 
   const handleMouseMove = (e) => {
+    
     const { left, top, width, height } = e.target.getBoundingClientRect()
     const x = (e.pageX - left) / width * 100
     const y = (e.pageY - top) / height * 75
     let url = e.target.src;
+    
     setState({
       backgroundImage: `url(${url})`,
       backgroundPosition: `${x}% ${y}%`
     })
+    console.log(screen);
   }
 
   const deleteHandler=(e)=>{
@@ -157,7 +165,7 @@ description.value=info.description
           <DeleteConfirm />
       <div className={ styles.headerWrapper }>
         <div className={ styles.mainPhotoWrapper } id="mainProfile">
-          <div style={ state } className={ styles.profilePictureWrapper } onDrop={ isAuth ? drop : null } onDragOver={ isAuth ? allowDrop : null } onMouseMove={ handleMouseMove } onMouseLeave={ handleMouseOut }>
+          <div style={ state } className={ styles.profilePictureWrapper } onDrop={ isAuth ? drop : null } onDragOver={ isAuth ? allowDrop : null } onMouseMove={ window.innerWidth>650 ?handleMouseMove :null } onMouseLeave={handleMouseOut }>
             <img className={ styles.mainPhoto } src={ info.profile ? info.profile : '' } alt={ info.title } />
           </div>
           <div className={ styles.smallImagesWrapper } onClick={ clickHandler }>
@@ -188,7 +196,7 @@ description.value=info.description
             </div>
             <div className={ styles.dWrapper }>
               <h5 className={ styles.detailsText }>Size:</h5>{ " " }
-              <span>{ info.length } cm x { info.width } cm x { info.depth } cm</span>
+              <span className={ styles.span }>{ info.length } cm x { info.width } cm x { info.depth } cm</span>
             </div>
           </div>
           <div className={ styles.description }>

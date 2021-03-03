@@ -107,7 +107,9 @@
     }
     .prof{
         font-size: 20px;
-
+    }
+    .gallery{
+        display: none;
     }
 }
 @media screen and (max-width: 550px){

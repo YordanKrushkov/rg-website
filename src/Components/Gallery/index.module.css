@@ -58,3 +58,13 @@
     left: 0%;
     top:40%
 } */
+
+@media screen and (max-width:600px){
+    .container{
+        top: 5%;
+    }
+    .wrapper{
+        width: 90%;
+        height: 100vh;
+    }
+}

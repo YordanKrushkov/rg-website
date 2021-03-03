@@ -3,6 +3,8 @@ import { useContext } from 'react'
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AuthContext } from '../../Context';
+import { FaUser } from "react-icons/fa";
+
 
 const Header = () => {
   const context = useContext(AuthContext);
@@ -72,6 +74,11 @@ const Header = () => {
             </Link>
           </li>
             : null }
+            <li className={ `${styles.li} ${styles.border}` }>
+            <Link to="/rg-website/login" className={ styles.link }>
+              <FaUser className={styles.user}/>
+            </Link>
+          </li>
 
         </ul>
       </nav>
@@ -113,7 +120,11 @@ const Header = () => {
               Add
             </Link>
           </li> : null }
-
+          <li className={ `${styles.li} ${styles.border}` }>
+            <Link to="/rg-website/login" className={ styles.link }>
+              <FaUser className={styles.user}/>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

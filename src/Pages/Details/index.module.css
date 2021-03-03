@@ -21,7 +21,6 @@
 .dWrapper{
     display: flex;
     align-items: center;
-    width: 50%;
 }
 .mainPhotoWrapper{
     margin: 20px;
@@ -157,22 +156,36 @@
         .mainPhoto{
             max-height: 430px;
         }
+        .mainPhoto:hover{
+            opacity: 100%;
+        }
         .smallImagesWrapper{
             width: 80%;
             margin: 0 auto;
         }
         .smallImage{
-            width: 10%;
+            width: 20%;
         }
         .infoWrapper{
             width: 85%;
             margin:0 auto;
         }
+        .title{
+            text-align: center;
+            font-size: 35px;
+        }
+        .dWrapper{
+           justify-content: flex-start;
+        }
         .details{
-            margin-top: 20px;
+            margin: 20px auto;
+            width: 50%;
         }
         .description{
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 @media screen and (max-width:650px){
@@ -187,6 +200,20 @@
 @media screen and (max-width:550px){
     .closeForm{
         top: 420px;
+    }
+    .dWrapper{
+        width: 100%;
+    
+    }
+    .details{
+        width: 70%;
+    }
+    .span{
+        font-size: 12px;
+        width: 200px;
+    }
+    .p{
+        text-align: justify;
     }
     }
 

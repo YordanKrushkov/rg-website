@@ -20,6 +20,8 @@
 }
 .li{
     padding:0 4%;
+    display: flex;
+    align-items: center;
 
 }
 .border{
@@ -29,6 +31,8 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
+    display: flex;
+    align-items: center;
 }
 .link:hover{
     color: #FC5321;
@@ -77,19 +81,23 @@
 .mobileLink:hover{
     color: #FC5321;
 }
+.user{
+    font-size: 20px;
+}
 @media screen and (max-width:800px){
     .li{
         font-size: 14px;
     }
 }
+
 @media screen and (max-width:700px){
     .li{
-        font-size: 12px;
-    }
-}
-@media screen and (max-width:700px){
-    .li{
-        font-size: 12px;
+        font-size: inherit;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        height: 30px;
+    
     }
 }
 @media screen and (max-width:600px){
