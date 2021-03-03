@@ -15,7 +15,7 @@ const Header = () => {
   let wrapper = document.getElementById("wrapper");
   const clickHandler = (e) => {
     
-    if (nav.style.display === "none" || nav.style.display === "") {
+    if (nav.style.display === "none" || nav.style.display === ""|| !nav.style.display ||!nav) {
       show(nav, wrapper)
     } else {
       hide(nav, wrapper)
@@ -23,12 +23,12 @@ const Header = () => {
 
   };
   const navClick = (e) => {
-    if (e.target.tagName === 'A' ||e.target.tagName === 'svg' ||e.target.tagName === 'path') {
+    if (e.target.tagName === 'A' || e.target.tagName === 'svg' ||e.target.tagName === 'path') {
       hide(nav, wrapper)
     }
   }
   const show = (nav, wrapper) => {
-    wrapper.style.height = "295px";
+    wrapper.style.height = "290px";
     nav.style.display = "block";
   }
   const hide = (nav, wrapper) => {
@@ -70,13 +70,13 @@ const Header = () => {
             </Link>
           </li>
           { isAuth ? <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/rg-website/add" className={ styles.link }>
+            <Link to="/add" className={ styles.link }>
               Add
             </Link>
           </li>
             : null }
             <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/rg-website/login" className={ styles.link }>
+            <Link to="/login" className={ styles.link }>
               <FaUser className={styles.user}/>
             </Link>
           </li>
@@ -87,42 +87,42 @@ const Header = () => {
       <nav className={ styles.mobile } id="mobileNav" onClick={ navClick }>
         <ul className={ styles.mobileUl }>
           <li className={ styles.mobileLi }>
-            <Link to="/rg-website/" className={ styles.mobileLink }>
+            <Link to="/" className={ styles.mobileLink }>
               Home
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/about" className={ styles.mobileLink }>
+            <Link to="/about" className={ styles.mobileLink }>
               About
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/portraits" className={ styles.mobileLink }>
+            <Link to="/portraits" className={ styles.mobileLink }>
               Portraits
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/abstracts" className={ styles.mobileLink }>
+            <Link to="/abstracts" className={ styles.mobileLink }>
               Abstracts
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/landscapes" className={ styles.mobileLink }>
+            <Link to="/landscapes" className={ styles.mobileLink }>
               Landscapes
             </Link>
           </li>
           <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/contacts" className={ styles.mobileLink }>
+            <Link to="/contacts" className={ styles.mobileLink }>
               Contacts
             </Link>
           </li>
           { isAuth ? <li className={ `${styles.mobileLi}` }>
-            <Link to="/rg-website/add" className={ styles.mobileLink }>
+            <Link to="/add" className={ styles.mobileLink }>
               Add
             </Link>
           </li> : null }
           <li className={ `${styles.li} ${styles.border}` }>
-            <Link to="/rg-website/login" className={ styles.link }>
+            <Link to="/login" className={ styles.link }>
               <FaUser className={styles.user}/>
             </Link>
           </li>
