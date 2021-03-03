@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import { AuthContext } from '../../Context';
 import authenticate from '../../Services/auth'
 
-const url = 'https://yordankrushkov.github.io/rgbackend/login';
+const url = 'https://rg-gallerybackend.herokuapp.com//login';
 const Login = () => {
     const [user, setUser] = useState({
         email: '',
