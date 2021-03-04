@@ -5,18 +5,15 @@
 (https://yordankrushkov.github.io/rg-website/)
 
 <h4>Technologies</h4>
-
 HTML5, CSS3, Sass/SCSS, ReactJS, Unity
 
 <h4>Server</h4>
-
 Node.JS, Express, Mongo DB.
 
 <h4>Installation</h4>
-
 Fork/clone/download the repo and run npm install inside the folder.
 Run npm start.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
-You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br/> 
+You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).<br/> 
 To learn React, check out the [React documentation](https://reactjs.org/).
