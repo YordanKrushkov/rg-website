@@ -4,6 +4,11 @@
 
 https://yordankrushkov.github.io/rg-website
 
+<h4>Screenshot</h4>
+![ArtGallery](https://user-images.githubusercontent.com/71588770/109930094-24a01200-7cbf-11eb-824d-2b2b0da19559.png)
+
+
+
 <h4>Description</h4>
 A personal web-app for an artist. 
 The artist can upload and change the content when is she logged in. <br/>
