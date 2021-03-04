@@ -14,7 +14,7 @@ The artist can upload and change the content when is she logged in. <br/>
 For desktop users, there is a virtual gallery build with Unity.
 
 <h4>Technologies</h4>
-HTML5, CSS3, Sass/SCSS, ReactJS, Unity
+HTML5, CSS3, ReactJS, Unity
 
 <h4>Server</h4>
 Node.JS, Express, Mongo DB.
