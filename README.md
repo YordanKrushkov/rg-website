@@ -1,14 +1,24 @@
+<h1>ReactJS Artist Gallery App</h1>
 
+<h2>View project</h2>
 
+(https://yordankrushkov.github.io/rg-website/)
 
+<h4>Technologies</h4>
 
-Technologies
-HTML5, CSS3, Sass/SCSS, ReactJS
+HTML5, CSS3, Sass/SCSS, ReactJS, Unity
 
-Installation
+<h4>Server</h4>
+
+Node.JS, Express, Mongo DB.
+
+<h4>Installation</h4>
+
 Fork/clone/download the repo and run npm install inside the folder.
 Run npm start.
 
-This project was bootstrapped with Create React App.
-You can learn more in the Create React App documentation.
-To learn React, check out the React documentation.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
