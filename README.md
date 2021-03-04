@@ -5,7 +5,7 @@
 https://yordankrushkov.github.io/rg-website
 
 <h4>Screenshot</h4>
-<img src="https://res.cloudinary.com/zltgrd/image/upload/v1614844714/ArtGallery_t9iwe8.png" alt="RGGallery"/>
+<img src="https://res.cloudinary.com/zltgrd/image/upload/v1614845150/ArtGallery_pxezb8.png"/>
 
 
 <h4>Description</h4>
