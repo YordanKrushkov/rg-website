@@ -11,8 +11,8 @@ HTML5, CSS3, Sass/SCSS, ReactJS, Unity
 Node.JS, Express, Mongo DB.
 
 <h4>Installation</h4>
-Fork/clone/download the repo and run npm install inside the folder.
-Run npm start.
+Fork/clone/download the repo and run npm install inside the folder.<br/> 
+Run npm start.<br/> 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br/> 
 You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).<br/> 
