@@ -28,12 +28,16 @@ const Header = () => {
     }
   }
   const show = (nav, wrapper) => {
-    wrapper.style.height = "290px";
-    nav.style.display = "block";
+    if(nav,wrapper){
+      wrapper.style.height = "290px";
+      nav.style.display = "block";
+    }
   }
   const hide = (nav, wrapper) => {
-    nav.style.display = 'none'
-    wrapper.style.height = "0px";
+    if(nav,wrapper){
+      nav.style.display = 'none'
+      wrapper.style.height = "0px";
+    } 
   }
   return (
     <div className={ styles.wrapper } id="wrapper">
