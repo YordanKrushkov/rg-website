@@ -2,7 +2,7 @@
 
 <h2>View project</h2>
 
-(https://yordankrushkov.github.io/rg-website/)
+https://yordankrushkov.github.io/rg-website
 
 <h4>Technologies</h4>
 HTML5, CSS3, Sass/SCSS, ReactJS, Unity
