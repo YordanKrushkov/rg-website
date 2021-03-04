@@ -29,7 +29,7 @@ const Header = () => {
   }
   const show = (nav, wrapper) => {
     if(nav,wrapper){
-      wrapper.style.height = "290px";
+      wrapper.style.height = "265px";
       nav.style.display = "block";
     }
   }
