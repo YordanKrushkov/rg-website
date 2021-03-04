@@ -6,7 +6,7 @@ https://yordankrushkov.github.io/rg-website
 
 <h4>Description</h4>
 A personal web-app for an artist. 
-The artist can upload and change the content when is she logged in.
+The artist can upload and change the content when is she logged in. <br/>
 For desktop users, there is a virtual gallery build with Unity.
 
 <h4>Technologies</h4>
