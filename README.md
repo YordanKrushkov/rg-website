@@ -5,8 +5,7 @@
 https://yordankrushkov.github.io/rg-website
 
 <h4>Screenshot</h4>
-![ArtGallery](https://user-images.githubusercontent.com/71588770/109930094-24a01200-7cbf-11eb-824d-2b2b0da19559.png)
-
+![ArtGallery](https://res.cloudinary.com/zltgrd/image/upload/v1614844714/ArtGallery_t9iwe8.png')
 
 
 <h4>Description</h4>
